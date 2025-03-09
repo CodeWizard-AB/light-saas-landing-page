@@ -1,4 +1,5 @@
 import BrandTicker from "@/components/BrandTicker";
+import CallToAction from "@/components/CallToAction";
 import Hero from "@/components/Hero";
 import { Pricing } from "@/components/Pricing";
 import ProductShowcase from "@/components/ProductShowcase";
@@ -12,6 +13,7 @@ export default function Home() {
 			<ProductShowcase />
 			<Pricing />
 			<Testimonials />
+			<CallToAction />
 		</>
 	);
 }

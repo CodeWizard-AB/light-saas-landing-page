@@ -41,7 +41,7 @@
 	}
 
 	.section-description {
-		@apply text-xl leading-7 text-[#010D3E] mt-6 mb-10;
+		@apply text-[22px] leading-7 text-[#010D3E] mt-6 mb-10;
 	}
 
 	.card {

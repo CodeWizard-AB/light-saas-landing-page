@@ -12,7 +12,7 @@ import { twMerge } from "tailwind-merge";
 
 export const Testimonials = () => {
 	return (
-		<section className="bg-white pb-24">
+		<section className="bg-white lg:pb-24">
 			<div className="container">
 				<div className="max-w-[335px] md:max-w-[540px] mx-auto">
 					<div className="flex flex-col items-center text-center">
