@@ -28,7 +28,7 @@ export const Testimonials = () => {
 						</p>
 					</div>
 				</div>
-				<div className="flex items-center gap-6 justify-center [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[708px] overflow-y-hidden">
+				<div className="flex items-center gap-6 justify-center [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[708px] overflow-hidden">
 					<TestimonialsColumn testimonials={firstColumn} duration={17} />
 					<TestimonialsColumn
 						testimonials={secondColumn}
@@ -52,25 +52,27 @@ function TestimonialsColumn(props: {
 	duration?: number;
 }) {
 	return (
-		<motion.div
-			animate={{
-				translateY: "-50%",
-				transition: {
-					duration: props.duration || 20,
-					repeat: Infinity,
-					ease: "linear",
-				},
-			}}
-			className={twMerge("space-y-6", props.className)}
-		>
-			{[1, 2].map((i) => (
-				<Fragment key={i}>
-					{props.testimonials.map((testimonial, index) => (
-						<TestimonialCard key={index} testimonial={testimonial} />
-					))}
-				</Fragment>
-			))}
-		</motion.div>
+		<div className={twMerge(props.className, "h-[708px]")}>
+			<motion.div
+				animate={{
+					translateY: "-50%",
+					transition: {
+						duration: props.duration || 20,
+						repeat: Infinity,
+						ease: "linear",
+					},
+				}}
+				className={"space-y-6 pb-6"}
+			>
+				{[1, 2].map((i) => (
+					<Fragment key={i}>
+						{props.testimonials.map((testimonial, index) => (
+							<TestimonialCard key={index} testimonial={testimonial} />
+						))}
+					</Fragment>
+				))}
+			</motion.div>
+		</div>
 	);
 }
 
