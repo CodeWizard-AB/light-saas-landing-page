@@ -3,6 +3,7 @@ import ArrowRight from "@/assets/arrow-right.svg";
 import CogImage from "@/assets/cog.png";
 import Cylinder from "@/assets/cylinder.png";
 import Noodle from "@/assets/noodle.png";
+import * as motion from "motion/react-client";
 
 export default function Hero() {
 	return (
@@ -33,11 +34,25 @@ export default function Hero() {
 						</div>
 					</div>
 					<div className="mt-20 md:mt-0 md:h-[648px] md:relative w-full">
-						<Image
-							src={CogImage}
-							alt="Cog Image"
-							className="md:absolute md:h-full md:w-auto md:max-w-none md:-left-6 lg:left-0"
-						/>
+						<motion.div
+							className="h-full w-full md:absolute md:left-6 lg:left-0"
+							animate={{
+								translateY: [-20, 30],
+								transition: {
+									repeat: Infinity,
+									duration: 3,
+									repeatType: "mirror",
+									ease: "easeInOut",
+								},
+							}}
+						>
+							<Image
+								src={CogImage}
+								alt="Cog Image"
+								className="md:w-auto md:h-full md:max-w-none"
+							/>
+						</motion.div>
+
 						<Image
 							src={Cylinder}
 							alt="Cylinder"

@@ -8,7 +8,9 @@ import avatar7 from "@/assets/avatar-7.png";
 import avatar8 from "@/assets/avatar-8.png";
 import avatar9 from "@/assets/avatar-9.png";
 import Image from "next/image";
+import { Fragment } from "react";
 import { twMerge } from "tailwind-merge";
+import * as motion from "motion/react-client";
 
 export const Testimonials = () => {
 	return (
@@ -26,15 +28,17 @@ export const Testimonials = () => {
 						</p>
 					</div>
 				</div>
-				<div className="flex items-center gap-6 justify-center">
-					<TestimonialsColumn testimonials={firstColumn} />
+				<div className="flex items-center gap-6 justify-center [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[708px] overflow-y-hidden">
+					<TestimonialsColumn testimonials={firstColumn} duration={17} />
 					<TestimonialsColumn
 						testimonials={secondColumn}
 						className="hidden md:block"
+						duration={15}
 					/>
 					<TestimonialsColumn
 						testimonials={thirdColumn}
 						className="hidden lg:block"
+						duration={19}
 					/>
 				</div>
 			</div>
@@ -45,18 +49,28 @@ export const Testimonials = () => {
 function TestimonialsColumn(props: {
 	testimonials: typeof testimonials;
 	className?: string;
+	duration?: number;
 }) {
 	return (
-		<div
-			className={twMerge(
-				"space-y-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]",
-				props.className
-			)}
+		<motion.div
+			animate={{
+				translateY: "-50%",
+				transition: {
+					duration: props.duration || 20,
+					repeat: Infinity,
+					ease: "linear",
+				},
+			}}
+			className={twMerge("space-y-6", props.className)}
 		>
-			{props.testimonials.map((testimonial, index) => (
-				<TestimonialCard key={index} testimonial={testimonial} />
+			{[1, 2].map((i) => (
+				<Fragment key={i}>
+					{props.testimonials.map((testimonial, index) => (
+						<TestimonialCard key={index} testimonial={testimonial} />
+					))}
+				</Fragment>
 			))}
-		</div>
+		</motion.div>
 	);
 }
 
