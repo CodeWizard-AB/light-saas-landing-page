@@ -2,7 +2,7 @@
 
 @layer utilities {
 	.container {
-		@apply max-w-screen-xl mx-auto px-5;
+		@apply max-w-screen-xl mx-auto px-5 lg:px-0;
 	}
 
 	.btn {
@@ -15,5 +15,32 @@
 
 	.btn-text {
 		@apply text-black bg-transparent;
+	}
+
+	.mask-fade {
+		mask-image: linear-gradient(
+			to right,
+			rgba(0, 0, 0, 0),
+			rgba(0, 0, 0, 1),
+			rgba(0, 0, 0, 0)
+		);
+		mask-repeat: no-repeat;
+		mask-size: cover;
+	}
+
+	.tag {
+		@apply py-1 px-3 font-medium border w-max border-[#2222221A] rounded-lg tracking-tight;
+	}
+
+	.headline {
+		@apply bg-linear-to-b text-transparent from-black to-[#001E7F] bg-clip-text tracking-tight;
+	}
+
+	.section-title {
+		@apply font-bold text-3xl md:text-[54px] bg-linear-to-b text-transparent from-black to-[#001E7F] bg-clip-text tracking-tight;
+	}
+
+	.section-description {
+		@apply text-xl leading-7 text-[#010D3E] mt-6 mb-10;
 	}
 }

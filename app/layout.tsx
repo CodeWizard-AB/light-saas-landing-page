@@ -16,7 +16,10 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
 	return (
 		<html lang="en">
 			<body
-				className={twMerge(dmSans.className, "antialiased bg-[#EAEEFE]")}
+				className={twMerge(
+					dmSans.className,
+					"antialiased bg-[#EAEEFE] overflow-x-hidden"
+				)}
 				data-new-gr-c-s-check-loaded="14.1226.0"
 				data-gr-ext-installed=""
 				cz-shortcut-listen="true"

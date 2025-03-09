@@ -9,11 +9,9 @@ export default function Hero() {
 		<section className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_80%)] md:bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)]">
 			<div className="container">
 				<div className="flex flex-col md:flex-row items-center">
-					<div className="md:w-[478px] lg:w-1/2">
-						<div className="py-1 px-3 font-medium border w-max border-[#2222221A] rounded-lg tracking-tight">
-							Version 2.0 is here
-						</div>
-						<h1 className="bg-linear-to-b text-transparent from-black to-[#001E7F] bg-clip-text text-5xl md:text-7xl font-bold tracking-tight mt-6">
+					<div className="md:w-[478px] lg:w-full">
+						<div className="tag">Version 2.0 is here</div>
+						<h1 className="headline mt-6 font-bold text-5xl md:text-7xl">
 							Pathway to productivity
 						</h1>
 						<p className="text-xl leading-7 text-[#010D3E] mt-6 mb-8">
@@ -34,7 +32,7 @@ export default function Hero() {
 							</button>
 						</div>
 					</div>
-					<div className="mt-20 md:mt-0 md:h-[648px] md:relative">
+					<div className="mt-20 md:mt-0 md:h-[648px] md:relative w-full">
 						<Image
 							src={CogImage}
 							alt="Cog Image"
@@ -43,7 +41,7 @@ export default function Hero() {
 						<Image
 							src={Cylinder}
 							alt="Cylinder"
-							className="hidden md:block w-[220px] aspect-square"
+							className="hidden md:block w-[220px] aspect-square md:absolute -left-24 -top-6"
 						/>
 						<Image
 							src={Noodle}
