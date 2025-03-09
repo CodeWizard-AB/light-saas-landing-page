@@ -6,7 +6,7 @@ import Noodle from "@/assets/noodle.png";
 
 export default function Hero() {
 	return (
-		<section className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_80%)] md:bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)]">
+		<section className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient (ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_80%)] md:bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)]">
 			<div className="container">
 				<div className="flex flex-col md:flex-row items-center">
 					<div className="md:w-[478px] lg:w-full">

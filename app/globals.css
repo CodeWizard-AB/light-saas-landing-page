@@ -2,7 +2,7 @@
 
 @layer utilities {
 	.container {
-		@apply max-w-screen-xl mx-auto px-5 lg:px-0;
+		@apply max-w-screen-lg mx-auto px-5 lg:px-0;
 	}
 
 	.btn {
@@ -42,5 +42,9 @@
 
 	.section-description {
 		@apply text-xl leading-7 text-[#010D3E] mt-6 mb-10;
+	}
+
+	.card {
+		@apply p-10 mt-auto border-1 h-max max-w-xs w-full mx-auto border-[#f1f1f1] rounded-3xl shadow-[0_7px_14px_0_rgba(234,234,234)];
 	}
 }

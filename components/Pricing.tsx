@@ -19,10 +19,7 @@ export const Pricing = () => {
 					{pricingTiers.map((tier) => (
 						<div
 							key={tier.title}
-							className={twMerge(
-								"p-10 mt-auto border-1 h-max max-w-xs w-full mx-auto border-[#f1f1f1] rounded-3xl shadow-[0_7px_14px_0_rgba(234,234,234)]",
-								tier.popular && "bg-black text-white"
-							)}
+							className={twMerge("card", tier.popular && "bg-black text-white")}
 						>
 							<div className="flex justify-between items-center">
 								<h3
